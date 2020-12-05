@@ -1,0 +1,40 @@
+{% from "_formhelpers.html" import render_field %}
+{% extends "layout.html" %}
+{% block head %}
+<script src="{{ url_for('static', filename='api.js') }}" defer></script>
+
+{% endblock head %}
+
+{% block content %}
+<section class="main__section add-book__section">
+  <header class="section__header">
+    <h1 class="header__h1">{{ title }}</h1>
+    <a href="{{ url_for('main.home') }}" id="close" class="header__icon header__icon--left">
+      <i class="material-icons">close</i>
+    </a>
+  </header>
+
+  <form novalidate class="section__form" onsubmit="updateBook(event, '{{book_to_update.id}}')">
+
+    {{ form.csrf_token }}
+
+    <div class="input" id="title">
+      {{ render_field(form.title) }}
+    </div>
+
+    <div class="input" id="author">
+      {{ render_field(form.author) }}
+    </div>
+
+    <div class="input" id="genre">
+      {{ render_field(form.genre) }}
+    </div>
+
+    <button type="submit" class='form__button'>
+      Update book
+    </button>
+
+  </form>
+
+</section>
+{% endblock content %}

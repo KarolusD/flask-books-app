@@ -1,0 +1,32 @@
+{% from "_formhelpers.html" import render_field %}
+{% extends "layout.html" %} {% block content %}
+<section class="main__section add-book__section">
+  <header class="section__header">
+    <h1 class="header__h1">{{ title }}</h1>
+    <a href="{{ url_for('main.home') }}" id="close" class="header__icon header__icon--left">
+      <i class="material-icons">close</i>
+    </a>
+  </header>
+
+  <form novalidate method="POST" action="" class="section__form">
+
+    {{ form.csrf_token }}
+
+    <div class="input">
+      {{ render_field(form.title) }}
+    </div>
+
+    <div class="input">
+      {{ render_field(form.author) }}
+    </div>
+
+    <div class="input">
+      {{ render_field(form.genre) }}
+    </div>
+
+    {{ form.submit(class='form__button') }}
+
+  </form>
+
+</section>
+{% endblock content %}

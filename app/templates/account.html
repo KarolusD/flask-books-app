@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block head %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+<script type="module" src="{{ url_for('static', filename='utils/alert.js') }}" defer></script>
+
+{% endblock head %} {% block content %}
+<section class="main__section login__section">
+  <header class="section__header">
+    <h1 class="header__h1">{{ title }}</h1>
+  </header>
+
+  <div class="profile">
+    <img class="profile__image" src={{image_file}}>
+    <h2 class="profile__username">{{ current_user.username }}</h2>
+    <p class="profile__email">{{ current_user.email }}</p>
+  </div>
+
+  <form novalidate method="POST" action="" class="section__form section__form--account" enctype="multipart/form-data">
+
+    {{ form.csrf_token }}
+    <div class="input">
+      {{ form.username.label(class='form__label') }}
+
+      {% if form.username.errors %}
+      {{ form.username(class='form__input error')}}
+
+      {% for error in form.username.errors %}
+      <span class="input__error">{{ error }}</span>
+      {% endfor %}
+
+      {% else %}
+      {{ form.username(class='form__input')}}
+      {% endif %}
+    </div>
+
+    <div class="input">
+      {{ form.email.label(class='form__label') }}
+
+      {% if form.email.errors %}
+      {{ form.email(class='form__input error')}}
+
+      {% for error in form.email.errors %}
+      <span class="input__error">{{ error }}</span>
+      {% endfor %}
+
+      {% else %}
+      {{ form.email(class='form__input')}}
+      {% endif %}
+    </div>
+
+    <div class="input">
+      {{ form.picture.label(class='form__label') }}
+      {{ form.picture()}}
+
+      {% if form.picture.errors %}
+      {% for error in form.picture.errors %}
+      <span class="input__error">{{ error }}</span>
+      {% endfor %}
+      {% endif %}
+    </div>
+
+    {{ form.submit(class='form__button') }}
+
+  </form>
+
+  <h1></h1>
+</section>
+{% endblock content %}

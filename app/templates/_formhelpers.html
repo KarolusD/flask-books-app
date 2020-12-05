@@ -1,0 +1,18 @@
+{% macro render_field(field) %}
+
+{% set placeholder = kwargs.pop('placeholder', field.description) %}
+
+{{ field.label(class='form__label') }}
+
+{% if field.errors %}
+{{ field(class='form__input error', placeholder=placeholder, **kwargs)|safe }}
+
+{% for error in field.errors %}
+<span class="input__error">{{ error }}</span>
+{% endfor %}
+
+{% else %}
+{{ field(class='form__input', placeholder=placeholder, **kwargs)|safe }}
+{% endif %}
+
+{% endmacro %}

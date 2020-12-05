@@ -1,0 +1,43 @@
+{% extends "layout.html" %} {% block head %}
+<script src="{{ url_for('static', filename='api.js') }}" defer></script>
+
+{% endblock head %} {% block content %}
+
+<section class="main__section books-list__section">
+  <header class="section__header">
+    <a href="{{ url_for('users.logout') }}"
+      class="header__icon header__icon--left header__icon--warning header__icon--rotated">
+      <i class="material-icons">login</i>
+    </a>
+    <h1 class="header__h1">Books library</h1>
+    <a href="{{ url_for('users.account') }}" class="header__icon header__icon--right">
+      <i class="material-icons-outlined">account_circle</i>
+    </a>
+  </header>
+
+  <ul id="books-list" class="section__list">
+    {% for book in books_list %}
+    <li class="list__item" data-id={{book.id}}>
+      <h2 class="item__title">{{ book.title }}</h2>
+      <h3 class="item__author">{{ book.author }}</h3>
+      {%  if book.genre != '' %}
+      <p class="item__genre">{{ book.genre }}</p>
+      {% endif %}
+      <button onclick="deleteBook('{{book.id}}')" class="item__icon item__icon--warning">
+        <i class="material-icons-outlined">delete</i>
+      </button>
+      <a href="{{ url_for('books.update_book', id=book.id) }}"
+        class="item__icon item__icon--secondary item__icon--info">
+        <i class="material-icons-outlined">edit</i>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <a href="{{ url_for('books.add_book') }}" id="addBook" class="section__fab">
+    <i class="material-icons">add</i>
+  </a>
+</section>
+
+
+{% endblock content %}
