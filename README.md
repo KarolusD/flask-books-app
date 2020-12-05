@@ -4,7 +4,13 @@ Web application written in flask where you can store your favourite books.
 
 #### 🛠 Instruction to run this project on your own machine
 
-**1. Re-create virtual enviornment** (macOS or UNIX - Bash)
+**1. Clone this repo on your machine** (macOS or UNIX - Bash)
+
+```
+git clone https://github.com/KarolusD/flask-books-app.git
+```
+
+**2. Re-create virtual environment** (macOS or UNIX - Bash)
 
 ```
 python3 -m pip venv venv
@@ -12,7 +18,7 @@ source /venv/bin/activate
 python3 -m pip install -r requirements.txt
 ```
 
-**1. Re-create virtual enviornment** (Windows - CMD)
+**2. Re-create virtual environment** (Windows - CMD)
 
 ```
 python -m pip venv venv
@@ -20,14 +26,14 @@ python -m pip venv venv
 python -m pip install -r requirements.txt
 ```
 
-**2. Create .env file in /app folder to store your config variables safely**
+**3. Create .env file in /app folder to store your config variables safely**
 
 ```
 cd app
 touch .env
 ```
 
-**3. Write down all config variables in .env file**
+**4. Write down all config variables in .env file**
 
 ```
 EMAIL='your_email'
@@ -39,7 +45,7 @@ MAIL_SERVER='smtp.gmail.com'
 MAIL_PORT=465
 ```
 
-**4. That's all! Now you can run your app by typing...**
+**5. That's all! Now you can run your app by typing...**
 _make sure that you're in main folder (flask-books-app)_
 
 ```
