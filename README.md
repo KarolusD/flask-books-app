@@ -4,7 +4,7 @@ Web application written in flask where you can store your favourite books.
 
 #### 🛠 Instruction to run this project on your own machine
 
-**1. Clone this repo on your machine** (macOS or UNIX - Bash)
+**1. Clone this repo on your machine**
 
 ```
 git clone https://github.com/KarolusD/flask-books-app.git
