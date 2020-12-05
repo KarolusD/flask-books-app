@@ -83,38 +83,38 @@
 
 ### Authentication
 
-- [ ] Install flask-bcrypt
-- [ ] Hash users password
-- [ ] Add custom validation to registration form
-- [ ] Install flask-login
-- [ ] Create login_manager
-- [ ] Create login_manager.user_loader route
-- [ ] Inherit UserMixin in User model with methods like (isAuthenticated, isActive, isAnonymous)
-- [ ] Setup login_manager.login_view
-- [ ] Setup login_manager.login_message_category (CSS class)
-- [ ] Redirect user from login to home if it's not logout
-- [ ] Create account route and template
-- [ ] Redirect to login page if someone trying to access account without credentials
-- [ ] Redirect to login page if someone trying to access books view without credentials
-- [ ] Redirect to next page if user finally log in
-- [ ] Secure all pages that needs login user with @login_required decorator
+- [x] Install flask-bcrypt
+- [x] Hash users password
+- [x] Add custom validation to registration form
+- [x] Install flask-login
+- [x] Create login_manager
+- [x] Create login_manager.user_loader route
+- [x] Inherit UserMixin in User model with methods like (isAuthenticated, isActive, isAnonymous)
+- [x] Setup login_manager.login_view
+- [x] Setup login_manager.login_message_category (CSS class)
+- [x] Redirect user from login to home if it's not logout
+- [x] Create account route and template
+- [x] Redirect to login page if someone trying to access account without credentials
+- [x] Redirect to login page if someone trying to access books view without credentials
+- [x] Redirect to next page if user finally log in
+- [x] Secure all pages that needs login user with @login_required decorator
 
 ### Further app logic
 
-- [ ] Update account template
-- [ ] Display profile picture
-- [ ] Make a form class for updating profile info
-- [ ] Make edit_account route and template
-- [ ] Insert form into edit_account template
-- [ ] Change update form validation
-- [ ] Test it!
-- [ ] Import FileField, FileAllowed from flask-wtf.file (_optional_)
-- [ ] Implement updating photo image (_optional_)
-- [ ] Install Pillow and resize images (_optional_)
+- [x] Update account template
+- [x] Display profile picture
+- [x] Make a form class for updating profile info
+- [x] Make edit_account route and template
+- [x] Insert form into edit_account template
+- [x] Change update form validation
+- [x] Test it!
+- [x] Import FileField, FileAllowed from flask-wtf.file (_optional_)
+- [x] Implement updating photo image (_optional_)
+- [x] Install Pillow and resize images (_optional_)
 
 ### Deployment
 
-- [ ] Init git and connect with github repo (_optional_)
+- [x] Init git and connect with github repo (_optional_)
 - [x] Setup requirements.txt file
 - [x] Create linux server on linode
 - [x] Configure ssh keys etc.
